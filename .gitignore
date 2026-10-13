@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OpenSim / tool logs
+*.log
+opensim.log
+
+# LaTeX build files
+*.aux
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+
+# Large or regenerable intermediate files
+test2/results/animace/snimky.npz
+test2/results/animace/chuze_exo.mp4
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store

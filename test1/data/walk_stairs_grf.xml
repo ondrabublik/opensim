@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="40000">
+	<ExternalLoads name="GRF">
+		<objects>
+			<ExternalForce name="right">
+				<applied_to_body>calcn_r</applied_to_body>
+				<force_expressed_in_body>ground</force_expressed_in_body>
+				<point_expressed_in_body>ground</point_expressed_in_body>
+				<force_identifier>ground_force_v</force_identifier>
+				<point_identifier>ground_force_p</point_identifier>
+				<torque_identifier>ground_torque_</torque_identifier>
+			</ExternalForce>
+			<ExternalForce name="left">
+				<applied_to_body>calcn_l</applied_to_body>
+				<force_expressed_in_body>ground</force_expressed_in_body>
+				<point_expressed_in_body>ground</point_expressed_in_body>
+				<force_identifier>1_ground_force_v</force_identifier>
+				<point_identifier>1_ground_force_p</point_identifier>
+				<torque_identifier>1_ground_torque_</torque_identifier>
+			</ExternalForce>
+		</objects>
+		<datafile>D:\Soubory2\exoskeleton\openSim\test1\data\walk_stairs_grf.mot</datafile>
+	</ExternalLoads>
+</OpenSimDocument>

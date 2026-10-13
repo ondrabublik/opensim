@@ -1,0 +1,705 @@
+{
+ "fps": 25,
+ "bodies": [
+  "pelvis",
+  "femur_r",
+  "tibia_r",
+  "talus_r",
+  "calcn_r",
+  "toes_r",
+  "femur_l",
+  "tibia_l",
+  "talus_l",
+  "calcn_l",
+  "toes_l",
+  "torso",
+  "exo_thigh_r",
+  "exo_shank_r"
+ ],
+ "meshes": [
+  {
+   "body": "pelvis",
+   "file": "C:\\OpenSim 4.5\\Geometry\\sacrum.vtp",
+   "scale": [
+    1.02458,
+    1.02458,
+    1.02458
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "pelvis",
+   "file": "C:\\OpenSim 4.5\\Geometry\\pelvis.vtp",
+   "scale": [
+    1.02458,
+    1.02458,
+    1.02458
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "pelvis",
+   "file": "C:\\OpenSim 4.5\\Geometry\\l_pelvis.vtp",
+   "scale": [
+    1.02458,
+    1.02458,
+    1.02458
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "femur_r",
+   "file": "C:\\OpenSim 4.5\\Geometry\\femur_r.vtp",
+   "scale": [
+    1.14724,
+    1.14724,
+    1.14724
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "tibia_r",
+   "file": "C:\\OpenSim 4.5\\Geometry\\tibia_r.vtp",
+   "scale": [
+    0.988523,
+    0.988523,
+    0.988523
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "tibia_r",
+   "file": "C:\\OpenSim 4.5\\Geometry\\fibula.vtp",
+   "scale": [
+    0.988523,
+    0.988523,
+    0.988523
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "talus_r",
+   "file": "C:\\OpenSim 4.5\\Geometry\\talus.vtp",
+   "scale": [
+    1.11398,
+    1.11398,
+    1.11398
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "calcn_r",
+   "file": "C:\\OpenSim 4.5\\Geometry\\foot.vtp",
+   "scale": [
+    1.02708,
+    1.02708,
+    1.02708
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "toes_r",
+   "file": "C:\\OpenSim 4.5\\Geometry\\bofoot.vtp",
+   "scale": [
+    1.02708,
+    1.02708,
+    1.02708
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "femur_l",
+   "file": "C:\\OpenSim 4.5\\Geometry\\femur_l.vtp",
+   "scale": [
+    1.14724,
+    1.14724,
+    1.14724
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "tibia_l",
+   "file": "C:\\OpenSim 4.5\\Geometry\\tibia_l.vtp",
+   "scale": [
+    0.988523,
+    0.988523,
+    0.988523
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "tibia_l",
+   "file": "C:\\OpenSim 4.5\\Geometry\\l_fibula.vtp",
+   "scale": [
+    0.988523,
+    0.988523,
+    0.988523
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "talus_l",
+   "file": "C:\\OpenSim 4.5\\Geometry\\l_talus.vtp",
+   "scale": [
+    1.11398,
+    1.11398,
+    1.11398
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "calcn_l",
+   "file": "C:\\OpenSim 4.5\\Geometry\\l_foot.vtp",
+   "scale": [
+    1.02708,
+    1.02708,
+    1.02708
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "toes_l",
+   "file": "C:\\OpenSim 4.5\\Geometry\\l_bofoot.vtp",
+   "scale": [
+    1.02708,
+    1.02708,
+    1.02708
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "torso",
+   "file": "C:\\OpenSim 4.5\\Geometry\\hat_spine.vtp",
+   "scale": [
+    1.07972,
+    1.07972,
+    1.07972
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "torso",
+   "file": "C:\\OpenSim 4.5\\Geometry\\hat_jaw.vtp",
+   "scale": [
+    1.07972,
+    1.07972,
+    1.07972
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "torso",
+   "file": "C:\\OpenSim 4.5\\Geometry\\hat_skull.vtp",
+   "scale": [
+    1.07972,
+    1.07972,
+    1.07972
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "torso",
+   "file": "C:\\OpenSim 4.5\\Geometry\\hat_ribs.vtp",
+   "scale": [
+    1.07972,
+    1.07972,
+    1.07972
+   ],
+   "color": [
+    0.92,
+    0.89,
+    0.8
+   ]
+  },
+  {
+   "body": "exo_thigh_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_pohon.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.9,
+    0.45,
+    0.1
+   ]
+  },
+  {
+   "body": "exo_thigh_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_elektronika.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.12,
+    0.12,
+    0.13
+   ]
+  },
+  {
+   "body": "exo_thigh_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_rameno_stehna_lat.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.72,
+    0.74,
+    0.78
+   ]
+  },
+  {
+   "body": "exo_thigh_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_rameno_stehna_med.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.72,
+    0.74,
+    0.78
+   ]
+  },
+  {
+   "body": "exo_thigh_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_kloub_med_stehno.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.72,
+    0.74,
+    0.78
+   ]
+  },
+  {
+   "body": "exo_thigh_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_objimka_stehna.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.16,
+    0.17,
+    0.19
+   ]
+  },
+  {
+   "body": "exo_thigh_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_vystelka_stehna.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.55,
+    0.62,
+    0.7
+   ]
+  },
+  {
+   "body": "exo_thigh_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_pasek_stehna.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.08,
+    0.08,
+    0.09
+   ]
+  },
+  {
+   "body": "exo_shank_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_vystupni_priruba.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.72,
+    0.74,
+    0.78
+   ]
+  },
+  {
+   "body": "exo_shank_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_rameno_berce_lat.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.72,
+    0.74,
+    0.78
+   ]
+  },
+  {
+   "body": "exo_shank_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_rameno_berce_med.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.72,
+    0.74,
+    0.78
+   ]
+  },
+  {
+   "body": "exo_shank_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_kloub_med_berce.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.72,
+    0.74,
+    0.78
+   ]
+  },
+  {
+   "body": "exo_shank_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_objimka_berce.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.16,
+    0.17,
+    0.19
+   ]
+  },
+  {
+   "body": "exo_shank_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_vystelka_berce.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.55,
+    0.62,
+    0.7
+   ]
+  },
+  {
+   "body": "exo_shank_r",
+   "file": "D:\\Soubory2\\exoskeleton\\openSim\\test2\\model\\Geometry\\exo_pasek_berce.stl",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "color": [
+    0.08,
+    0.08,
+    0.09
+   ]
+  }
+ ],
+ "stairs": [
+  {
+   "center": [
+    10.747646807580022,
+    0.085,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.085,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    11.037646807580021,
+    0.17,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.17,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    11.327646807580022,
+    0.255,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.255,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    11.617646807580021,
+    0.34,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.34,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    11.907646807580022,
+    0.42500000000000004,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.42500000000000004,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    12.197646807580021,
+    0.51,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.51,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    12.487646807580022,
+    0.5950000000000001,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.5950000000000001,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    12.777646807580021,
+    0.68,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.68,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    13.067646807580022,
+    0.765,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.765,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    13.357646807580021,
+    0.8500000000000001,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.8500000000000001,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    13.647646807580022,
+    0.935,
+    0.0
+   ],
+   "half": [
+    0.145,
+    0.935,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    13.937646807580022,
+    1.02,
+    0.0
+   ],
+   "half": [
+    0.145,
+    1.02,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    14.227646807580022,
+    1.105,
+    0.0
+   ],
+   "half": [
+    0.145,
+    1.105,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    14.517646807580022,
+    1.1900000000000002,
+    0.0
+   ],
+   "half": [
+    0.145,
+    1.1900000000000002,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    14.80764680758002,
+    1.2750000000000001,
+    0.0
+   ],
+   "half": [
+    0.145,
+    1.2750000000000001,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    15.097646807580022,
+    1.36,
+    0.0
+   ],
+   "half": [
+    0.145,
+    1.36,
+    0.6
+   ]
+  },
+  {
+   "center": [
+    15.992646807580023,
+    1.445,
+    0.0
+   ],
+   "half": [
+    0.75,
+    1.445,
+    0.6
+   ]
+  }
+ ],
+ "t_schody": 9.918379511889432,
+ "t_rovina_konec": 8.638323053698219
+}

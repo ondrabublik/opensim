@@ -1,0 +1,203 @@
+{
+ "exo_thigh_r": {
+  "mass": 1.3420431596618627,
+  "mass_center": [
+   0.0083949622335304,
+   0.053284652183012905,
+   0.058577082750222886
+  ],
+  "inertia": [
+   0.01621551670514815,
+   0.007237392742533599,
+   0.011119732719932189,
+   -0.0016789442831125381,
+   0.00040614576276974765,
+   0.002724431511663499
+  ],
+  "parts": [
+   {
+    "name": "pohon",
+    "file": "exo_pohon.stl",
+    "material": "pohon",
+    "color": [
+     0.9,
+     0.45,
+     0.1
+    ],
+    "mass": 0.72
+   },
+   {
+    "name": "elektronika",
+    "file": "exo_elektronika.stl",
+    "material": "elektronika",
+    "color": [
+     0.12,
+     0.12,
+     0.13
+    ],
+    "mass": 0.1
+   },
+   {
+    "name": "rameno_stehna_lat",
+    "file": "exo_rameno_stehna_lat.stl",
+    "material": "hlinik_7075",
+    "color": [
+     0.72,
+     0.74,
+     0.78
+    ],
+    "mass": 0.12824904108352
+   },
+   {
+    "name": "rameno_stehna_med",
+    "file": "exo_rameno_stehna_med.stl",
+    "material": "hlinik_7075",
+    "color": [
+     0.72,
+     0.74,
+     0.78
+    ],
+    "mass": 0.1449536538963487
+   },
+   {
+    "name": "kloub_med_stehno",
+    "file": "exo_kloub_med_stehno.stl",
+    "material": "hlinik_7075",
+    "color": [
+     0.72,
+     0.74,
+     0.78
+    ],
+    "mass": 0.07745480665911861
+   },
+   {
+    "name": "objimka_stehna",
+    "file": "exo_objimka_stehna.stl",
+    "material": "kompozit_CF",
+    "color": [
+     0.16,
+     0.17,
+     0.19
+    ],
+    "mass": 0.14251711238978612
+   },
+   {
+    "name": "vystelka_stehna",
+    "file": "exo_vystelka_stehna.stl",
+    "material": "pena_EVA",
+    "color": [
+     0.55,
+     0.62,
+     0.7
+    ],
+    "mass": 0.015470884176826042
+   },
+   {
+    "name": "pasek_stehna",
+    "file": "exo_pasek_stehna.stl",
+    "material": "textil",
+    "color": [
+     0.08,
+     0.08,
+     0.09
+    ],
+    "mass": 0.013397661456263352
+   }
+  ]
+ },
+ "exo_shank_r": {
+  "mass": 0.41754256133306095,
+  "mass_center": [
+   -0.014107365123599966,
+   -0.09585196452812668,
+   0.008707046733909223
+  ],
+  "inertia": [
+   0.003984677107846635,
+   0.001778355658595889,
+   0.0026821211649269987,
+   -0.0004138957131898919,
+   7.345809752947795e-06,
+   3.249620147457663e-05
+  ],
+  "parts": [
+   {
+    "name": "vystupni_priruba",
+    "file": "exo_vystupni_priruba.stl",
+    "material": "hlinik_7075",
+    "color": [
+     0.72,
+     0.74,
+     0.78
+    ],
+    "mass": 0.07132047058324882
+   },
+   {
+    "name": "rameno_berce_lat",
+    "file": "exo_rameno_berce_lat.stl",
+    "material": "hlinik_7075",
+    "color": [
+     0.72,
+     0.74,
+     0.78
+    ],
+    "mass": 0.09299832051762424
+   },
+   {
+    "name": "rameno_berce_med",
+    "file": "exo_rameno_berce_med.stl",
+    "material": "hlinik_7075",
+    "color": [
+     0.72,
+     0.74,
+     0.78
+    ],
+    "mass": 0.10540091999878372
+   },
+   {
+    "name": "kloub_med_berce",
+    "file": "exo_kloub_med_berce.stl",
+    "material": "hlinik_7075",
+    "color": [
+     0.72,
+     0.74,
+     0.78
+    ],
+    "mass": 0.041706434354910296
+   },
+   {
+    "name": "objimka_berce",
+    "file": "exo_objimka_berce.stl",
+    "material": "kompozit_CF",
+    "color": [
+     0.16,
+     0.17,
+     0.19
+    ],
+    "mass": 0.08781782081048688
+   },
+   {
+    "name": "vystelka_berce",
+    "file": "exo_vystelka_berce.stl",
+    "material": "pena_EVA",
+    "color": [
+     0.55,
+     0.62,
+     0.7
+    ],
+    "mass": 0.009310290546716561
+   },
+   {
+    "name": "pasek_berce",
+    "file": "exo_pasek_berce.stl",
+    "material": "textil",
+    "color": [
+     0.08,
+     0.08,
+     0.09
+    ],
+    "mass": 0.008988304521290444
+   }
+  ]
+ }
+}
