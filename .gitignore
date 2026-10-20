@@ -21,6 +21,10 @@ opensim.log
 # Large or regenerable intermediate files
 test2/results/animace/snimky.npz
 test2/results/animace/chuze_exo.mp4
+test3/results/*_BodyKinematics_acc_global.sto
+test3/results/*_BodyKinematics_pos_global.sto
+test3/results/*_Kinematics_q.sto
+test3/results/*_Kinematics_dudt.sto
 
 # Editors / OS
 .vscode/
@@ -29,3 +33,9 @@ test2/results/animace/chuze_exo.mp4
 Thumbs.db
 desktop.ini
 .DS_Store
+test4/results/sim_*.sto
+test5/results/*/animace/snimky.npz
+test5/results/*/animace/_raw.mp4
+test5/results/*/*_BodyKinematics_acc_global.sto
+test5/results/*/*_BodyKinematics_pos_global.sto
+test5/results/*/exo_cnn_ForceReporter_forces.sto

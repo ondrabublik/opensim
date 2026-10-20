@@ -1,0 +1,345 @@
+{
+ "nastaveni": {
+  "popis": "Učení CNN pro řízení motoru exoskeletu ON/OFF z dat v data/*.csv (export z test5, s8_export_nn.py).",
+  "vstupy": [
+   "koleno_flexe_deg",
+   "stehno_omega_deg_s",
+   "holen_omega_deg_s"
+  ],
+  "normalizace": [
+   100.0,
+   300.0,
+   300.0
+  ],
+  "fs_Hz": 20.0,
+  "okno_s": 1.0,
+  "stitek": {
+   "prah_Nm_kg": 0.55,
+   "useky": [
+    "schody nahoru"
+   ],
+   "jen_stoj": true
+  },
+  "augmentace": {
+   "variant_na_osobu": 50,
+   "rychlost": [
+    0.85,
+    1.15
+   ],
+   "zesileni": 0.1,
+   "offset_uhlu_deg": 2.0,
+   "bias_gyra_deg_s": 5.0,
+   "sum": [
+    0.5,
+    6.0,
+    6.0
+   ]
+  },
+  "uceni": {
+   "epochy": 40,
+   "krok": 0.003,
+   "davka": 256,
+   "seed": 1
+  }
+ },
+ "leave_one_person_out": {
+  "mala": {
+   "precision": 0.7441860465116279,
+   "recall": 0.9566517189835575,
+   "F1": 0.8371484630477436,
+   "presnost": 0.9579533941236069,
+   "zapnuto_v_usecich_%": {
+    "podesta": 37.3,
+    "rovina": 0.0,
+    "schody dolů": 3.3,
+    "schody nahoru": 33.5,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "mala_pomala": {
+   "precision": 0.795959595959596,
+   "recall": 0.9609756097560975,
+   "F1": 0.870718232044199,
+   "presnost": 0.9681112019623875,
+   "zapnuto_v_usecich_%": {
+    "podesta": 37.6,
+    "rovina": 0.0,
+    "schody dolů": 0.4,
+    "schody nahoru": 32.7,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "mala_rychla": {
+   "precision": 0.7525641025641026,
+   "recall": 0.9686468646864687,
+   "F1": 0.8470418470418469,
+   "presnost": 0.9560165975103735,
+   "zapnuto_v_usecich_%": {
+    "podesta": 0.0,
+    "rovina": 0.0,
+    "schody dolů": 6.0,
+    "schody nahoru": 39.4,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "velky": {
+   "precision": 0.8598214285714286,
+   "recall": 0.9678391959798995,
+   "F1": 0.9106382978723404,
+   "presnost": 0.9723320158102767,
+   "zapnuto_v_usecich_%": {
+    "podesta": 34.2,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 40.0,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "velky_pomala": {
+   "precision": 0.9143835616438356,
+   "recall": 0.978021978021978,
+   "F1": 0.9451327433628319,
+   "presnost": 0.9820331517329315,
+   "zapnuto_v_usecich_%": {
+    "podesta": 0.0,
+    "rovina": 0.3,
+    "schody dolů": 0.0,
+    "schody nahoru": 45.3,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "velky_rychla": {
+   "precision": 0.9085106382978724,
+   "recall": 0.9660633484162896,
+   "F1": 0.9364035087719299,
+   "presnost": 0.9790915645277577,
+   "zapnuto_v_usecich_%": {
+    "podesta": 0.0,
+    "rovina": 0.3,
+    "schody dolů": 0.0,
+    "schody nahoru": 44.5,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "vychozi": {
+   "precision": 0.8695652173913043,
+   "recall": 0.9791921664626683,
+   "F1": 0.9211283822682785,
+   "presnost": 0.9774262646234965,
+   "zapnuto_v_usecich_%": {
+    "podesta": 27.1,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 37.6,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "vychozi_pomala": {
+   "precision": 0.9091666666666667,
+   "recall": 0.9767233661593554,
+   "F1": 0.9417350021579628,
+   "presnost": 0.9823644676681907,
+   "zapnuto_v_usecich_%": {
+    "podesta": 0.0,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 42.3,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "vychozi_rychla": {
+   "precision": 0.8432098765432099,
+   "recall": 0.9912917271407837,
+   "F1": 0.9112741827885257,
+   "presnost": 0.973521799721282,
+   "zapnuto_v_usecich_%": {
+    "podesta": 40.6,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 39.2,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  }
+ },
+ "vsechny_osoby_trenink": {
+  "mala": {
+   "precision": 0.8849315068493151,
+   "recall": 0.9656203288490284,
+   "F1": 0.9235167977126519,
+   "presnost": 0.9819317798041203,
+   "zapnuto_v_usecich_%": {
+    "podesta": 10.7,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 33.1,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "mala_pomala": {
+   "precision": 0.9089887640449438,
+   "recall": 0.9865853658536585,
+   "F1": 0.9461988304093567,
+   "presnost": 0.9874625238484601,
+   "zapnuto_v_usecich_%": {
+    "podesta": 2.1,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 33.1,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "mala_rychla": {
+   "precision": 0.8938461538461538,
+   "recall": 0.9587458745874587,
+   "F1": 0.9251592356687899,
+   "presnost": 0.9804979253112033,
+   "zapnuto_v_usecich_%": {
+    "podesta": 0.0,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 37.1,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "velky": {
+   "precision": 0.9349514563106797,
+   "recall": 0.9678391959798995,
+   "F1": 0.951111111111111,
+   "presnost": 0.9855072463768116,
+   "zapnuto_v_usecich_%": {
+    "podesta": 1.1,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 40.0,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "velky_pomala": {
+   "precision": 0.925,
+   "recall": 0.9758241758241758,
+   "F1": 0.9497326203208556,
+   "presnost": 0.9836559638344732,
+   "zapnuto_v_usecich_%": {
+    "podesta": 0.0,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 44.8,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "velky_rychla": {
+   "precision": 0.9106382978723404,
+   "recall": 0.9683257918552036,
+   "F1": 0.9385964912280703,
+   "presnost": 0.9798125450612833,
+   "zapnuto_v_usecich_%": {
+    "podesta": 0.0,
+    "rovina": 0.3,
+    "schody dolů": 0.0,
+    "schody nahoru": 44.5,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "vychozi": {
+   "precision": 0.9162790697674419,
+   "recall": 0.9645042839657283,
+   "F1": 0.9397734048896841,
+   "presnost": 0.9833580491019938,
+   "zapnuto_v_usecich_%": {
+    "podesta": 6.2,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 37.2,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "vychozi_pomala": {
+   "precision": 0.9166666666666666,
+   "recall": 0.9847806624888094,
+   "F1": 0.9495036685369013,
+   "presnost": 0.9847158719790986,
+   "zapnuto_v_usecich_%": {
+    "podesta": 0.0,
+    "rovina": 0.1,
+    "schody dolů": 0.0,
+    "schody nahoru": 42.2,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  },
+  "vychozi_rychla": {
+   "precision": 0.8756410256410256,
+   "recall": 0.9912917271407837,
+   "F1": 0.9298842750170183,
+   "presnost": 0.9794943260999402,
+   "zapnuto_v_usecich_%": {
+    "podesta": 25.4,
+    "rovina": 0.0,
+    "schody dolů": 0.0,
+    "schody nahoru": 39.2,
+    "sed + vstávání": 0.0,
+    "zastavení": 0.0
+   }
+  }
+ },
+ "parametru": 2533,
+ "oken": 291028,
+ "ztrata": [
+  0.24004665363477534,
+  0.12259160356776419,
+  0.10436145770813894,
+  0.09827946649149616,
+  0.08919687424977564,
+  0.08374470235568392,
+  0.0778302741216696,
+  0.07700913890104423,
+  0.0728419294156175,
+  0.07151826143767367,
+  0.06855761868450666,
+  0.06721838676094229,
+  0.06519990042067045,
+  0.06559316411991059,
+  0.06302855517832212,
+  0.06269130922309876,
+  0.05991209716081778,
+  0.06038807030209973,
+  0.06046103003497316,
+  0.057264857384719495,
+  0.05670908005815431,
+  0.05578752516223945,
+  0.05605967296249656,
+  0.05681647515476593,
+  0.05455218125897358,
+  0.05410943171546656,
+  0.053854635528911766,
+  0.0547337748190374,
+  0.053051060234465076,
+  0.05301838070034378,
+  0.05303586544761745,
+  0.0513951822973571,
+  0.051448424781077196,
+  0.05261713739497912,
+  0.05176405525438276,
+  0.05146322026600464,
+  0.05000954839937965,
+  0.05036550012282362,
+  0.05059950520821363,
+  0.05014700538873417
+ ]
+}

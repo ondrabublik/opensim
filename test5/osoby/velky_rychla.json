@@ -1,0 +1,32 @@
+{
+  "jmeno": "velky_rychla",
+  "popis": "Vyšší a těžší osoba (1,94 m, 98 kg), o něco pomalejší chůze. Varianta: rychlá chůze (tempo ×0,82, krok ×1,1).",
+  "vyska_m": 1.94,
+  "hmotnost_kg": 98.0,
+  "segmenty_m": {
+    "stehno": null,
+    "berec": null,
+    "chodidlo": null
+  },
+  "styl_chuze": {
+    "skalovat_s_delkou_nohy": true,
+    "tempo": 0.902,
+    "delka_kroku": 1.1
+  },
+  "prostredi": {
+    "vyska_sedaku_m": 0.46,
+    "delka_roviny_m": 5.0,
+    "vyska_stupne_m": 0.17,
+    "hloubka_stupne_m": 0.29,
+    "pocet_stupnu": 17,
+    "podesta_m": 0.9
+  },
+  "exoskelet": {
+    "vahy_site": "neuronova_sit/vahy/cnn_regrese.npz",
+    "max_moment_Nm": 100.0,
+    "podil_kompenzace": 1.0,
+    "moment_zapnuto_Nm": 40.0,
+    "mrtve_pasmo_Nm_kg": 0.1
+  },
+  "skupina": "velky"
+}

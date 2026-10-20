@@ -1,0 +1,62 @@
+{
+  "popis": "Učení CNN pro řízení motoru exoskeletu ON/OFF z dat v data/*.csv (export z test5, s8_export_nn.py).",
+  "typ": "regrese",
+  "vstupy": [
+    "koleno_flexe_deg",
+    "stehno_omega_deg_s",
+    "holen_omega_deg_s"
+  ],
+  "normalizace": [
+    100.0,
+    300.0,
+    300.0
+  ],
+  "fs_Hz": 20.0,
+  "okno_s": 1.0,
+  "regrese": {
+    "popis": "Síť odhaduje moment kolene, který má převzít motor [N m/kg]; řízení ho násobí hmotností uživatele.",
+    "useky": {
+      "schody nahoru": 1.0,
+      "sed + vstávání": 1.0,
+      "schody dolů": 1.0
+    },
+    "jen_extenze": true,
+    "vaha_useku": {
+      "schody nahoru": 2.0
+    },
+    "vaha_ostatni": 1.0,
+    "vystup_soubor": "vahy/cnn_regrese.npz",
+    "predstih_s": 0.05,
+    "pokuta_prekompenzace": 3.0
+  },
+  "stitek": {
+    "prah_Nm_kg": 0.55,
+    "useky": [
+      "schody nahoru"
+    ],
+    "jen_stoj": true,
+    "popis": "Pro typ 'onoff': ON <=> moment > prah v daných úsecích.",
+    "vystup_soubor": "vahy/cnn_vahy.npz"
+  },
+  "augmentace": {
+    "variant_na_osobu": 50,
+    "rychlost": [
+      0.85,
+      1.15
+    ],
+    "zesileni": 0.1,
+    "offset_uhlu_deg": 2.0,
+    "bias_gyra_deg_s": 5.0,
+    "sum": [
+      0.5,
+      6.0,
+      6.0
+    ]
+  },
+  "uceni": {
+    "epochy": 40,
+    "krok": 0.003,
+    "davka": 256,
+    "seed": 1
+  }
+}

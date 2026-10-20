@@ -1,0 +1,58 @@
+{
+ "jmeno": "mala_rychla",
+ "skupina": "mala",
+ "vyska_m": 1.62,
+ "hmotnost_kg": 56.0,
+ "hmotnost_s_exo_kg": 57.76,
+ "segmenty_m": {
+  "stehno": 0.4010250817884406,
+  "berec": 0.3754089422028353,
+  "chodidlo": 0.21641221374045802
+ },
+ "styl_chuze": {
+  "skalovat_s_delkou_nohy": true,
+  "tempo": 0.82,
+  "delka_kroku": 1.1
+ },
+ "prostredi": {
+  "vyska_sedaku_m": 0.46,
+  "delka_roviny_m": 5.0,
+  "vyska_stupne_m": 0.17,
+  "hloubka_stupne_m": 0.29,
+  "pocet_stupnu": 17,
+  "podesta_m": 0.9
+ },
+ "fs_Hz": 200.0,
+ "useky": [
+  [
+   "sed + vstávání",
+   0.0,
+   2.4110880135439627
+  ],
+  [
+   "rovina",
+   2.4110880135439627,
+   5.840595103020829
+  ],
+  [
+   "schody nahoru",
+   5.840595103020829,
+   14.595471628067392
+  ],
+  [
+   "podesta",
+   14.595471628067392,
+   15.52028252860048
+  ],
+  [
+   "schody dolů",
+   15.52028252860048,
+   23.011250822918456
+  ],
+  [
+   "zastavení",
+   23.011250822918456,
+   24.096588698140575
+  ]
+ ]
+}

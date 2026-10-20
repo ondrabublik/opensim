@@ -1,0 +1,58 @@
+{
+ "jmeno": "velky_pomala",
+ "skupina": "velky",
+ "vyska_m": 1.94,
+ "hmotnost_kg": 98.0,
+ "hmotnost_s_exo_kg": 99.76,
+ "segmenty_m": {
+  "stehno": 0.4802399127589967,
+  "berec": 0.44956379498364224,
+  "chodidlo": 0.2591603053435114
+ },
+ "styl_chuze": {
+  "skalovat_s_delkou_nohy": true,
+  "tempo": 1.375,
+  "delka_kroku": 0.9
+ },
+ "prostredi": {
+  "vyska_sedaku_m": 0.46,
+  "delka_roviny_m": 5.0,
+  "vyska_stupne_m": 0.17,
+  "hloubka_stupne_m": 0.29,
+  "pocet_stupnu": 17,
+  "podesta_m": 0.9
+ },
+ "fs_Hz": 200.0,
+ "useky": [
+  [
+   "sed + vstávání",
+   0.0,
+   3.923316928036086
+  ],
+  [
+   "rovina",
+   3.923316928036086,
+   10.216406430061864
+  ],
+  [
+   "schody nahoru",
+   10.216406430061864,
+   26.281461877929928
+  ],
+  [
+   "podesta",
+   26.281461877929928,
+   27.978474777352616
+  ],
+  [
+   "schody dolů",
+   27.978474777352616,
+   41.724279262676355
+  ],
+  [
+   "zastavení",
+   41.724279262676355,
+   43.13136797076914
+  ]
+ ]
+}

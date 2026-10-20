@@ -1,0 +1,58 @@
+{
+ "jmeno": "vychozi_rychla",
+ "skupina": "vychozi",
+ "vyska_m": 1.834,
+ "hmotnost_kg": 72.6,
+ "hmotnost_s_exo_kg": 74.36,
+ "segmenty_m": {
+  "stehno": 0.454,
+  "berec": 0.425,
+  "chodidlo": 0.245
+ },
+ "styl_chuze": {
+  "skalovat_s_delkou_nohy": true,
+  "tempo": 0.82,
+  "delka_kroku": 1.1
+ },
+ "prostredi": {
+  "vyska_sedaku_m": 0.46,
+  "delka_roviny_m": 5.0,
+  "vyska_stupne_m": 0.17,
+  "hloubka_stupne_m": 0.29,
+  "pocet_stupnu": 17,
+  "podesta_m": 0.9
+ },
+ "fs_Hz": 200.0,
+ "useky": [
+  [
+   "sed + vstávání",
+   0.0,
+   2.527
+  ],
+  [
+   "rovina",
+   2.527,
+   5.733199999999999
+  ],
+  [
+   "schody nahoru",
+   5.733199999999999,
+   15.048400000000004
+  ],
+  [
+   "podesta",
+   15.048400000000004,
+   16.032400000000006
+  ],
+  [
+   "schody dolů",
+   16.032400000000006,
+   24.002800000000008
+  ],
+  [
+   "zastavení",
+   24.002800000000008,
+   25.112800000000007
+  ]
+ ]
+}

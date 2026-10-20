@@ -1,0 +1,868 @@
+{
+ "nastaveni": {
+  "popis": "Učení CNN pro řízení motoru exoskeletu ON/OFF z dat v data/*.csv (export z test5, s8_export_nn.py).",
+  "typ": "regrese",
+  "vstupy": [
+   "koleno_flexe_deg",
+   "stehno_omega_deg_s",
+   "holen_omega_deg_s"
+  ],
+  "normalizace": [
+   100.0,
+   300.0,
+   300.0
+  ],
+  "fs_Hz": 20.0,
+  "okno_s": 1.0,
+  "regrese": {
+   "popis": "Síť odhaduje moment kolene, který má převzít motor [N m/kg]; řízení ho násobí hmotností uživatele.",
+   "useky": {
+    "schody nahoru": 1.0,
+    "sed + vstávání": 1.0,
+    "schody dolů": 1.0
+   },
+   "jen_extenze": true,
+   "vaha_useku": {
+    "schody nahoru": 2.0
+   },
+   "vaha_ostatni": 1.0,
+   "vystup_soubor": "vahy/cnn_regrese.npz",
+   "predstih_s": 0.05,
+   "pokuta_prekompenzace": 3.0
+  },
+  "stitek": {
+   "prah_Nm_kg": 0.55,
+   "useky": [
+    "schody nahoru"
+   ],
+   "jen_stoj": true,
+   "popis": "Pro typ 'onoff': ON <=> moment > prah v daných úsecích.",
+   "vystup_soubor": "vahy/cnn_vahy.npz"
+  },
+  "augmentace": {
+   "variant_na_osobu": 50,
+   "rychlost": [
+    0.85,
+    1.15
+   ],
+   "zesileni": 0.1,
+   "offset_uhlu_deg": 2.0,
+   "bias_gyra_deg_s": 5.0,
+   "sum": [
+    0.5,
+    6.0,
+    6.0
+   ]
+  },
+  "uceni": {
+   "epochy": 40,
+   "krok": 0.003,
+   "davka": 256,
+   "seed": 1
+  }
+ },
+ "leave_one_person_out": {
+  "mala": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.774,
+     "vystup_prumer_Nm_kg": 0.454,
+     "spicka_cloveka_bez_exo": 2.19,
+     "spicka_cloveka_s_exo": 0.85
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.015,
+     "vystup_prumer_Nm_kg": 0.005,
+     "spicka_cloveka_bez_exo": 1.27,
+     "spicka_cloveka_s_exo": 1.27
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.23,
+     "vystup_prumer_Nm_kg": 0.648,
+     "spicka_cloveka_bez_exo": 2.25,
+     "spicka_cloveka_s_exo": 2.22
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.263,
+     "vystup_prumer_Nm_kg": 0.444,
+     "spicka_cloveka_bez_exo": 2.25,
+     "spicka_cloveka_s_exo": 0.7
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.105,
+     "vystup_prumer_Nm_kg": 0.252,
+     "spicka_cloveka_bez_exo": 1.16,
+     "spicka_cloveka_s_exo": 0.27
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.092,
+     "vystup_prumer_Nm_kg": 0.044,
+     "spicka_cloveka_bez_exo": 0.05,
+     "spicka_cloveka_s_exo": 0.05
+    }
+   },
+   "RMSE_Nm_kg": 0.2554583448431822,
+   "R2": 0.8180886162525149
+  },
+  "mala_pomala": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.914,
+     "vystup_prumer_Nm_kg": 0.526,
+     "spicka_cloveka_bez_exo": 2.1,
+     "spicka_cloveka_s_exo": 0.91
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.013,
+     "vystup_prumer_Nm_kg": 0.004,
+     "spicka_cloveka_bez_exo": 1.38,
+     "spicka_cloveka_s_exo": 1.38
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.243,
+     "vystup_prumer_Nm_kg": 0.673,
+     "spicka_cloveka_bez_exo": 2.19,
+     "spicka_cloveka_s_exo": 2.16
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.29,
+     "vystup_prumer_Nm_kg": 0.491,
+     "spicka_cloveka_bez_exo": 2.27,
+     "spicka_cloveka_s_exo": 0.93
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.085,
+     "vystup_prumer_Nm_kg": 0.265,
+     "spicka_cloveka_bez_exo": 1.08,
+     "spicka_cloveka_s_exo": 0.22
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.016,
+     "vystup_prumer_Nm_kg": 0.008,
+     "spicka_cloveka_bez_exo": 0.01,
+     "spicka_cloveka_s_exo": 0.01
+    }
+   },
+   "RMSE_Nm_kg": 0.2857529634330131,
+   "R2": 0.7701893546783898
+  },
+  "mala_rychla": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.056,
+     "vystup_prumer_Nm_kg": 0.033,
+     "spicka_cloveka_bez_exo": 1.33,
+     "spicka_cloveka_s_exo": 1.33
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.086,
+     "vystup_prumer_Nm_kg": 0.013,
+     "spicka_cloveka_bez_exo": 1.15,
+     "spicka_cloveka_s_exo": 1.14
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.248,
+     "vystup_prumer_Nm_kg": 0.542,
+     "spicka_cloveka_bez_exo": 1.8,
+     "spicka_cloveka_s_exo": 1.47
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.319,
+     "vystup_prumer_Nm_kg": 0.431,
+     "spicka_cloveka_bez_exo": 2.2,
+     "spicka_cloveka_s_exo": 1.05
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.119,
+     "vystup_prumer_Nm_kg": 0.213,
+     "spicka_cloveka_bez_exo": 1.22,
+     "spicka_cloveka_s_exo": 0.44
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.358,
+     "vystup_prumer_Nm_kg": 0.19,
+     "spicka_cloveka_bez_exo": 1.03,
+     "spicka_cloveka_s_exo": 0.93
+    }
+   },
+   "RMSE_Nm_kg": 0.25363874993101765,
+   "R2": 0.8131239518766907
+  },
+  "velky": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.549,
+     "vystup_prumer_Nm_kg": 0.312,
+     "spicka_cloveka_bez_exo": 2.38,
+     "spicka_cloveka_s_exo": 1.57
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.011,
+     "vystup_prumer_Nm_kg": 0.01,
+     "spicka_cloveka_bez_exo": 1.55,
+     "spicka_cloveka_s_exo": 1.54
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.244,
+     "vystup_prumer_Nm_kg": 0.737,
+     "spicka_cloveka_bez_exo": 2.53,
+     "spicka_cloveka_s_exo": 2.09
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.238,
+     "vystup_prumer_Nm_kg": 0.649,
+     "spicka_cloveka_bez_exo": 2.57,
+     "spicka_cloveka_s_exo": 1.34
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.171,
+     "vystup_prumer_Nm_kg": 0.29,
+     "spicka_cloveka_bez_exo": 1.47,
+     "spicka_cloveka_s_exo": 0.55
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.034,
+     "vystup_prumer_Nm_kg": 0.012,
+     "spicka_cloveka_bez_exo": 0.03,
+     "spicka_cloveka_s_exo": 0.02
+    }
+   },
+   "RMSE_Nm_kg": 0.23557176643504585,
+   "R2": 0.9034529909993478
+  },
+  "velky_pomala": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.035,
+     "vystup_prumer_Nm_kg": 0.022,
+     "spicka_cloveka_bez_exo": 1.31,
+     "spicka_cloveka_s_exo": 1.26
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.081,
+     "vystup_prumer_Nm_kg": 0.014,
+     "spicka_cloveka_bez_exo": 1.53,
+     "spicka_cloveka_s_exo": 1.52
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.151,
+     "vystup_prumer_Nm_kg": 0.671,
+     "spicka_cloveka_bez_exo": 1.91,
+     "spicka_cloveka_s_exo": 1.0
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.162,
+     "vystup_prumer_Nm_kg": 0.68,
+     "spicka_cloveka_bez_exo": 2.53,
+     "spicka_cloveka_s_exo": 0.77
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.231,
+     "vystup_prumer_Nm_kg": 0.274,
+     "spicka_cloveka_bez_exo": 1.48,
+     "spicka_cloveka_s_exo": 0.81
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.031,
+     "vystup_prumer_Nm_kg": 0.017,
+     "spicka_cloveka_bez_exo": 1.25,
+     "spicka_cloveka_s_exo": 1.18
+    }
+   },
+   "RMSE_Nm_kg": 0.151408356330489,
+   "R2": 0.9595811843211853
+  },
+  "velky_rychla": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.073,
+     "vystup_prumer_Nm_kg": 0.037,
+     "spicka_cloveka_bez_exo": 1.47,
+     "spicka_cloveka_s_exo": 1.46
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.105,
+     "vystup_prumer_Nm_kg": 0.013,
+     "spicka_cloveka_bez_exo": 1.52,
+     "spicka_cloveka_s_exo": 1.51
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.25,
+     "vystup_prumer_Nm_kg": 0.632,
+     "spicka_cloveka_bez_exo": 1.97,
+     "spicka_cloveka_s_exo": 1.24
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.328,
+     "vystup_prumer_Nm_kg": 0.623,
+     "spicka_cloveka_bez_exo": 2.62,
+     "spicka_cloveka_s_exo": 1.82
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.139,
+     "vystup_prumer_Nm_kg": 0.293,
+     "spicka_cloveka_bez_exo": 1.56,
+     "spicka_cloveka_s_exo": 0.47
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.026,
+     "vystup_prumer_Nm_kg": 0.016,
+     "spicka_cloveka_bez_exo": 1.32,
+     "spicka_cloveka_s_exo": 1.31
+    }
+   },
+   "RMSE_Nm_kg": 0.25456374844579516,
+   "R2": 0.8815415779295723
+  },
+  "vychozi": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.286,
+     "vystup_prumer_Nm_kg": 0.115,
+     "spicka_cloveka_bez_exo": 2.35,
+     "spicka_cloveka_s_exo": 1.97
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.023,
+     "vystup_prumer_Nm_kg": 0.012,
+     "spicka_cloveka_bez_exo": 1.2,
+     "spicka_cloveka_s_exo": 1.2
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.233,
+     "vystup_prumer_Nm_kg": 0.706,
+     "spicka_cloveka_bez_exo": 2.46,
+     "spicka_cloveka_s_exo": 1.66
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.277,
+     "vystup_prumer_Nm_kg": 0.654,
+     "spicka_cloveka_bez_exo": 2.45,
+     "spicka_cloveka_s_exo": 1.56
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.131,
+     "vystup_prumer_Nm_kg": 0.269,
+     "spicka_cloveka_bez_exo": 1.38,
+     "spicka_cloveka_s_exo": 0.38
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.055,
+     "vystup_prumer_Nm_kg": 0.019,
+     "spicka_cloveka_bez_exo": 0.02,
+     "spicka_cloveka_s_exo": 0.01
+    }
+   },
+   "RMSE_Nm_kg": 0.22606367829535254,
+   "R2": 0.8998625083575285
+  },
+  "vychozi_pomala": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.036,
+     "vystup_prumer_Nm_kg": 0.021,
+     "spicka_cloveka_bez_exo": 1.23,
+     "spicka_cloveka_s_exo": 1.21
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.114,
+     "vystup_prumer_Nm_kg": 0.013,
+     "spicka_cloveka_bez_exo": 1.57,
+     "spicka_cloveka_s_exo": 1.55
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.16,
+     "vystup_prumer_Nm_kg": 0.65,
+     "spicka_cloveka_bez_exo": 1.88,
+     "spicka_cloveka_s_exo": 0.84
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.201,
+     "vystup_prumer_Nm_kg": 0.709,
+     "spicka_cloveka_bez_exo": 2.39,
+     "spicka_cloveka_s_exo": 0.76
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.133,
+     "vystup_prumer_Nm_kg": 0.284,
+     "spicka_cloveka_bez_exo": 1.3,
+     "spicka_cloveka_s_exo": 0.42
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.071,
+     "vystup_prumer_Nm_kg": 0.044,
+     "spicka_cloveka_bez_exo": 1.21,
+     "spicka_cloveka_s_exo": 1.16
+    }
+   },
+   "RMSE_Nm_kg": 0.16408149689534007,
+   "R2": 0.9452222009224335
+  },
+  "vychozi_rychla": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.594,
+     "vystup_prumer_Nm_kg": 0.291,
+     "spicka_cloveka_bez_exo": 2.46,
+     "spicka_cloveka_s_exo": 1.3
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.025,
+     "vystup_prumer_Nm_kg": 0.015,
+     "spicka_cloveka_bez_exo": 1.55,
+     "spicka_cloveka_s_exo": 1.53
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.336,
+     "vystup_prumer_Nm_kg": 0.712,
+     "spicka_cloveka_bez_exo": 2.62,
+     "spicka_cloveka_s_exo": 2.22
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.425,
+     "vystup_prumer_Nm_kg": 0.642,
+     "spicka_cloveka_bez_exo": 2.51,
+     "spicka_cloveka_s_exo": 1.23
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.184,
+     "vystup_prumer_Nm_kg": 0.265,
+     "spicka_cloveka_bez_exo": 1.53,
+     "spicka_cloveka_s_exo": 0.6
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.064,
+     "vystup_prumer_Nm_kg": 0.026,
+     "spicka_cloveka_bez_exo": 0.03,
+     "spicka_cloveka_s_exo": 0.01
+    }
+   },
+   "RMSE_Nm_kg": 0.3472350823040576,
+   "R2": 0.7628509023803574
+  }
+ },
+ "vsechny_osoby_trenink": {
+  "mala": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.27,
+     "vystup_prumer_Nm_kg": 0.074,
+     "spicka_cloveka_bez_exo": 2.19,
+     "spicka_cloveka_s_exo": 1.96
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.003,
+     "vystup_prumer_Nm_kg": 0.002,
+     "spicka_cloveka_bez_exo": 1.27,
+     "spicka_cloveka_s_exo": 1.27
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.203,
+     "vystup_prumer_Nm_kg": 0.603,
+     "spicka_cloveka_bez_exo": 2.25,
+     "spicka_cloveka_s_exo": 2.07
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.211,
+     "vystup_prumer_Nm_kg": 0.436,
+     "spicka_cloveka_bez_exo": 2.25,
+     "spicka_cloveka_s_exo": 0.93
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.092,
+     "vystup_prumer_Nm_kg": 0.266,
+     "spicka_cloveka_bez_exo": 1.16,
+     "spicka_cloveka_s_exo": 0.38
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.017,
+     "vystup_prumer_Nm_kg": 0.005,
+     "spicka_cloveka_bez_exo": 0.05,
+     "spicka_cloveka_s_exo": 0.05
+    }
+   },
+   "RMSE_Nm_kg": 0.18006503135386218,
+   "R2": 0.9096187275333526
+  },
+  "mala_pomala": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.214,
+     "vystup_prumer_Nm_kg": 0.086,
+     "spicka_cloveka_bez_exo": 2.1,
+     "spicka_cloveka_s_exo": 2.04
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.002,
+     "vystup_prumer_Nm_kg": 0.002,
+     "spicka_cloveka_bez_exo": 1.38,
+     "spicka_cloveka_s_exo": 1.38
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.158,
+     "vystup_prumer_Nm_kg": 0.628,
+     "spicka_cloveka_bez_exo": 2.19,
+     "spicka_cloveka_s_exo": 2.03
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.188,
+     "vystup_prumer_Nm_kg": 0.419,
+     "spicka_cloveka_bez_exo": 2.27,
+     "spicka_cloveka_s_exo": 1.96
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.094,
+     "vystup_prumer_Nm_kg": 0.265,
+     "spicka_cloveka_bez_exo": 1.08,
+     "spicka_cloveka_s_exo": 0.36
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.002,
+     "vystup_prumer_Nm_kg": 0.002,
+     "spicka_cloveka_bez_exo": 0.01,
+     "spicka_cloveka_s_exo": 0.01
+    }
+   },
+   "RMSE_Nm_kg": 0.15259792929150423,
+   "R2": 0.934463093601167
+  },
+  "mala_rychla": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.038,
+     "vystup_prumer_Nm_kg": 0.013,
+     "spicka_cloveka_bez_exo": 1.33,
+     "spicka_cloveka_s_exo": 1.33
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.08,
+     "vystup_prumer_Nm_kg": 0.003,
+     "spicka_cloveka_bez_exo": 1.15,
+     "spicka_cloveka_s_exo": 1.15
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.272,
+     "vystup_prumer_Nm_kg": 0.539,
+     "spicka_cloveka_bez_exo": 1.8,
+     "spicka_cloveka_s_exo": 1.31
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.246,
+     "vystup_prumer_Nm_kg": 0.465,
+     "spicka_cloveka_bez_exo": 2.2,
+     "spicka_cloveka_s_exo": 0.9
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.109,
+     "vystup_prumer_Nm_kg": 0.233,
+     "spicka_cloveka_bez_exo": 1.22,
+     "spicka_cloveka_s_exo": 0.3
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.024,
+     "vystup_prumer_Nm_kg": 0.012,
+     "spicka_cloveka_bez_exo": 1.03,
+     "spicka_cloveka_s_exo": 1.03
+    }
+   },
+   "RMSE_Nm_kg": 0.2169942950784203,
+   "R2": 0.8632211129733321
+  },
+  "velky": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.251,
+     "vystup_prumer_Nm_kg": 0.056,
+     "spicka_cloveka_bez_exo": 2.38,
+     "spicka_cloveka_s_exo": 2.38
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.002,
+     "vystup_prumer_Nm_kg": 0.002,
+     "spicka_cloveka_bez_exo": 1.55,
+     "spicka_cloveka_s_exo": 1.54
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.216,
+     "vystup_prumer_Nm_kg": 0.72,
+     "spicka_cloveka_bez_exo": 2.53,
+     "spicka_cloveka_s_exo": 2.05
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.218,
+     "vystup_prumer_Nm_kg": 0.621,
+     "spicka_cloveka_bez_exo": 2.57,
+     "spicka_cloveka_s_exo": 2.1
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.145,
+     "vystup_prumer_Nm_kg": 0.314,
+     "spicka_cloveka_bez_exo": 1.47,
+     "spicka_cloveka_s_exo": 0.5
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.037,
+     "vystup_prumer_Nm_kg": 0.005,
+     "spicka_cloveka_bez_exo": 0.03,
+     "spicka_cloveka_s_exo": 0.02
+    }
+   },
+   "RMSE_Nm_kg": 0.19376860933446408,
+   "R2": 0.9346780423522704
+  },
+  "velky_pomala": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.007,
+     "vystup_prumer_Nm_kg": 0.004,
+     "spicka_cloveka_bez_exo": 1.31,
+     "spicka_cloveka_s_exo": 1.31
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.096,
+     "vystup_prumer_Nm_kg": 0.004,
+     "spicka_cloveka_bez_exo": 1.53,
+     "spicka_cloveka_s_exo": 1.53
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.124,
+     "vystup_prumer_Nm_kg": 0.657,
+     "spicka_cloveka_bez_exo": 1.91,
+     "spicka_cloveka_s_exo": 1.07
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.193,
+     "vystup_prumer_Nm_kg": 0.696,
+     "spicka_cloveka_bez_exo": 2.53,
+     "spicka_cloveka_s_exo": 1.03
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.177,
+     "vystup_prumer_Nm_kg": 0.313,
+     "spicka_cloveka_bez_exo": 1.48,
+     "spicka_cloveka_s_exo": 0.67
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.005,
+     "vystup_prumer_Nm_kg": 0.003,
+     "spicka_cloveka_bez_exo": 1.25,
+     "spicka_cloveka_s_exo": 1.25
+    }
+   },
+   "RMSE_Nm_kg": 0.1514003254305512,
+   "R2": 0.9595854719426032
+  },
+  "velky_rychla": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.055,
+     "vystup_prumer_Nm_kg": 0.028,
+     "spicka_cloveka_bez_exo": 1.47,
+     "spicka_cloveka_s_exo": 1.47
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.102,
+     "vystup_prumer_Nm_kg": 0.006,
+     "spicka_cloveka_bez_exo": 1.52,
+     "spicka_cloveka_s_exo": 1.51
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.22,
+     "vystup_prumer_Nm_kg": 0.609,
+     "spicka_cloveka_bez_exo": 1.97,
+     "spicka_cloveka_s_exo": 1.19
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.226,
+     "vystup_prumer_Nm_kg": 0.672,
+     "spicka_cloveka_bez_exo": 2.62,
+     "spicka_cloveka_s_exo": 1.12
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.163,
+     "vystup_prumer_Nm_kg": 0.286,
+     "spicka_cloveka_bez_exo": 1.56,
+     "spicka_cloveka_s_exo": 0.49
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.012,
+     "vystup_prumer_Nm_kg": 0.006,
+     "spicka_cloveka_bez_exo": 1.32,
+     "spicka_cloveka_s_exo": 1.32
+    }
+   },
+   "RMSE_Nm_kg": 0.19753490930498252,
+   "R2": 0.9286719184550626
+  },
+  "vychozi": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.24,
+     "vystup_prumer_Nm_kg": 0.068,
+     "spicka_cloveka_bez_exo": 2.35,
+     "spicka_cloveka_s_exo": 2.28
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.014,
+     "vystup_prumer_Nm_kg": 0.004,
+     "spicka_cloveka_bez_exo": 1.2,
+     "spicka_cloveka_s_exo": 1.2
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.22,
+     "vystup_prumer_Nm_kg": 0.694,
+     "spicka_cloveka_bez_exo": 2.46,
+     "spicka_cloveka_s_exo": 1.67
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.23,
+     "vystup_prumer_Nm_kg": 0.582,
+     "spicka_cloveka_bez_exo": 2.45,
+     "spicka_cloveka_s_exo": 1.88
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.107,
+     "vystup_prumer_Nm_kg": 0.297,
+     "spicka_cloveka_bez_exo": 1.38,
+     "spicka_cloveka_s_exo": 0.32
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.049,
+     "vystup_prumer_Nm_kg": 0.005,
+     "spicka_cloveka_bez_exo": 0.02,
+     "spicka_cloveka_s_exo": 0.01
+    }
+   },
+   "RMSE_Nm_kg": 0.19698595616803818,
+   "R2": 0.9239663816193824
+  },
+  "vychozi_pomala": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.002,
+     "vystup_prumer_Nm_kg": 0.002,
+     "spicka_cloveka_bez_exo": 1.23,
+     "spicka_cloveka_s_exo": 1.22
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.122,
+     "vystup_prumer_Nm_kg": 0.002,
+     "spicka_cloveka_bez_exo": 1.57,
+     "spicka_cloveka_s_exo": 1.57
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.134,
+     "vystup_prumer_Nm_kg": 0.653,
+     "spicka_cloveka_bez_exo": 1.88,
+     "spicka_cloveka_s_exo": 1.03
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.213,
+     "vystup_prumer_Nm_kg": 0.62,
+     "spicka_cloveka_bez_exo": 2.39,
+     "spicka_cloveka_s_exo": 1.17
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.128,
+     "vystup_prumer_Nm_kg": 0.302,
+     "spicka_cloveka_bez_exo": 1.3,
+     "spicka_cloveka_s_exo": 0.41
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.011,
+     "vystup_prumer_Nm_kg": 0.006,
+     "spicka_cloveka_bez_exo": 1.21,
+     "spicka_cloveka_s_exo": 1.21
+    }
+   },
+   "RMSE_Nm_kg": 0.16180092871278343,
+   "R2": 0.9467343317280205
+  },
+  "vychozi_rychla": {
+   "po_usecich": {
+    "podesta": {
+     "RMSE_Nm_kg": 0.489,
+     "vystup_prumer_Nm_kg": 0.208,
+     "spicka_cloveka_bez_exo": 2.46,
+     "spicka_cloveka_s_exo": 1.37
+    },
+    "rovina": {
+     "RMSE_Nm_kg": 0.007,
+     "vystup_prumer_Nm_kg": 0.003,
+     "spicka_cloveka_bez_exo": 1.55,
+     "spicka_cloveka_s_exo": 1.55
+    },
+    "schody dolů": {
+     "RMSE_Nm_kg": 0.333,
+     "vystup_prumer_Nm_kg": 0.646,
+     "spicka_cloveka_bez_exo": 2.62,
+     "spicka_cloveka_s_exo": 2.52
+    },
+    "schody nahoru": {
+     "RMSE_Nm_kg": 0.309,
+     "vystup_prumer_Nm_kg": 0.621,
+     "spicka_cloveka_bez_exo": 2.51,
+     "spicka_cloveka_s_exo": 0.72
+    },
+    "sed + vstávání": {
+     "RMSE_Nm_kg": 0.164,
+     "vystup_prumer_Nm_kg": 0.252,
+     "spicka_cloveka_bez_exo": 1.53,
+     "spicka_cloveka_s_exo": 0.47
+    },
+    "zastavení": {
+     "RMSE_Nm_kg": 0.002,
+     "vystup_prumer_Nm_kg": 0.002,
+     "spicka_cloveka_bez_exo": 0.03,
+     "spicka_cloveka_s_exo": 0.02
+    }
+   },
+   "RMSE_Nm_kg": 0.2875063531553428,
+   "R2": 0.8374192306085404
+  }
+ },
+ "parametru": 2533,
+ "oken": 291028,
+ "ztrata": [
+  0.19959295949566835,
+  0.09816199174323093,
+  0.0809531737993128,
+  0.07496855862538318,
+  0.07063976951106395,
+  0.06542227141145311,
+  0.05901864797323592,
+  0.05650710195273471,
+  0.053198509560458504,
+  0.05164143417987996,
+  0.050601018082156383,
+  0.04916920116418059,
+  0.04817191242173462,
+  0.04813240663642394,
+  0.04787072141363438,
+  0.04732261511389688,
+  0.04667005363542476,
+  0.04607177495787762,
+  0.0455030252698277,
+  0.04484740248063652,
+  0.04457142669163518,
+  0.04422919471775093,
+  0.044044698560504296,
+  0.04413673537514835,
+  0.04308517663207699,
+  0.04342018895242697,
+  0.043495845126396794,
+  0.043292980954737735,
+  0.04302558004331803,
+  0.04195375588899058,
+  0.04225817820182231,
+  0.042316039418008676,
+  0.04143444022997135,
+  0.04180515391807755,
+  0.04188379526129294,
+  0.04216458111277323,
+  0.04184788152513436,
+  0.04144673424741288,
+  0.04101510548930529,
+  0.04115396223333344
+ ]
+}

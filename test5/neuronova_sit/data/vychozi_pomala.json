@@ -1,0 +1,58 @@
+{
+ "jmeno": "vychozi_pomala",
+ "skupina": "vychozi",
+ "vyska_m": 1.834,
+ "hmotnost_kg": 72.6,
+ "hmotnost_s_exo_kg": 74.36,
+ "segmenty_m": {
+  "stehno": 0.454,
+  "berec": 0.425,
+  "chodidlo": 0.245
+ },
+ "styl_chuze": {
+  "skalovat_s_delkou_nohy": true,
+  "tempo": 1.25,
+  "delka_kroku": 0.9
+ },
+ "prostredi": {
+  "vyska_sedaku_m": 0.46,
+  "delka_roviny_m": 5.0,
+  "vyska_stupne_m": 0.17,
+  "hloubka_stupne_m": 0.29,
+  "pocet_stupnu": 17,
+  "podesta_m": 0.9
+ },
+ "fs_Hz": 200.0,
+ "useky": [
+  [
+   "sed + vstávání",
+   0.0,
+   3.5375
+  ],
+  [
+   "rovina",
+   3.5375,
+   9.100000000000005
+  ],
+  [
+   "schody nahoru",
+   9.100000000000005,
+   23.299999999999997
+  ],
+  [
+   "podesta",
+   23.299999999999997,
+   24.799999999999997
+  ],
+  [
+   "schody dolů",
+   24.799999999999997,
+   36.949999999999974
+  ],
+  [
+   "zastavení",
+   36.949999999999974,
+   38.27499999999998
+  ]
+ ]
+}

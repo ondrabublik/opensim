@@ -1,0 +1,32 @@
+{
+  "jmeno": "mala",
+  "popis": "Menší a lehčí osoba (1,62 m, 56 kg).",
+  "vyska_m": 1.62,
+  "hmotnost_kg": 56.0,
+  "segmenty_m": {
+    "stehno": null,
+    "berec": null,
+    "chodidlo": null
+  },
+  "styl_chuze": {
+    "skalovat_s_delkou_nohy": true,
+    "tempo": 1.0,
+    "delka_kroku": 1.0
+  },
+  "prostredi": {
+    "vyska_sedaku_m": 0.46,
+    "delka_roviny_m": 5.0,
+    "vyska_stupne_m": 0.17,
+    "hloubka_stupne_m": 0.29,
+    "pocet_stupnu": 17,
+    "podesta_m": 0.9
+  },
+  "exoskelet": {
+    "vahy_site": "neuronova_sit/vahy/cnn_regrese.npz",
+    "max_moment_Nm": 100.0,
+    "podil_kompenzace": 1.0,
+    "moment_zapnuto_Nm": 40.0,
+    "mrtve_pasmo_Nm_kg": 0.1
+  },
+  "skupina": "mala"
+}

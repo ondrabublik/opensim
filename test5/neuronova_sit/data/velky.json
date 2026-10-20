@@ -1,0 +1,56 @@
+{
+ "jmeno": "velky",
+ "vyska_m": 1.94,
+ "hmotnost_kg": 98.0,
+ "hmotnost_s_exo_kg": 99.76,
+ "segmenty_m": {
+  "stehno": 0.4802399127589967,
+  "berec": 0.44956379498364224,
+  "chodidlo": 0.2591603053435114
+ },
+ "styl_chuze": {
+  "skalovat_s_delkou_nohy": true,
+  "tempo": 1.1
+ },
+ "prostredi": {
+  "vyska_sedaku_m": 0.46,
+  "delka_roviny_m": 5.0,
+  "vyska_stupne_m": 0.17,
+  "hloubka_stupne_m": 0.29,
+  "pocet_stupnu": 17,
+  "podesta_m": 0.9
+ },
+ "fs_Hz": 200.0,
+ "useky": [
+  [
+   "sed + vstávání",
+   0.0,
+   3.2586535424288687
+  ],
+  [
+   "rovina",
+   3.2586535424288687,
+   7.682200500257324
+  ],
+  [
+   "schody nahoru",
+   7.682200500257324,
+   20.534244858551766
+  ],
+  [
+   "podesta",
+   20.534244858551766,
+   21.891855178089912
+  ],
+  [
+   "schody dolů",
+   21.891855178089912,
+   32.8884987663489
+  ],
+  [
+   "zastavení",
+   32.8884987663489,
+   34.154169732823135
+  ]
+ ]
+}
